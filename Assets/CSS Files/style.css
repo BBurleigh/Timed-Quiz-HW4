@@ -2,16 +2,16 @@ body {
 
     padding: 0;
     margin: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
 }
 
 .panel {
 
-    height: 100vh;
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
 
@@ -21,11 +21,15 @@ body {
 .result {
 
     margin: 10px;
-    padding: 5px;
-    width: 80vw;
-    height: 10vh;
+    padding: 50px;
+    width: 80%;
+    height: 20%;
     text-align: center;
-    font-size: 50px;
+    font-size: 32px;
+    background-color: #c7dddf;
+    font-family: monospace;
+    border-style: inset;
+    border-color: gray;
 
 }
 
@@ -34,19 +38,22 @@ body {
     display: flex;
     justify-content: space-around;
     margin: 10px;
-    padding: 5px;
-    width: 80vw;
-    height: 20vh;
+    padding: 25px;
+    width: 90%;
+    height: 20%;
     background-color: #9ed1b3;
+    border-style: inset;
+    border-color: gray;
 
 }
 
 .option {
 
     padding: 10px;
-    width: 15vw;
+    width: 25vw;
     height: 10vh;
     font-size: larger;
+    flex-wrap: wrap;
     background-color: lightskyblue;
     border-radius: 25%;
 
@@ -66,15 +73,18 @@ body {
     display: flex;
     justify-content: space-around;
     background-color: #c7dddf;
+    border-style: inset;
+    border-color: gray;
 
 }
 
 .evaluate,
 .next {
 
-    width: 30vw;
-    height: 8vh;
-    padding: 5px;
+    margin-top: 10px;
+    width: 40%;
+    height: 80%;
+    padding: 10px;
     font-size: larger;
 
 }
@@ -82,6 +92,7 @@ body {
 .evaluate {
 
     background-color: #50DBB4;
+    border-radius: 8px;
 
 }
 
@@ -89,5 +100,6 @@ body {
 
     color: white;
     background-color: #BF3325;
+    border-radius: 8px;
 
 }

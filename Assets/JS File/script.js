@@ -58,7 +58,7 @@ var start = true;
 
 function iterate(id) {
 
-    var result = document.getElementById("result");
+    var result = document.getElementsByClassName("result");
     result[0].innerText = "";
 
     const question = document.getElementById("question");
@@ -143,6 +143,7 @@ var id = 0;
 next.addEventListener("click", () => {
 
     start = false;
+    
     if (id < 5) {
 
         id++;
