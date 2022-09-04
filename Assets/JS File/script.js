@@ -53,3 +53,64 @@ const quizQuestions = [{
        ]
 }
 ]
+
+var start = true;
+
+function iterate(id) {
+
+    var result = document.getElementById("result");
+    result[0].innerText = "";
+
+    const question = document.getElementById("question");
+
+    question.innerText = quizQuestions[id].q;
+
+    const option1 = document.getElementById('option1');
+    const option2 = document.getElementById('option2');
+    const option3 = document.getElementById('option3');
+    const option4 = document.getElementById('option4');
+
+    option1.innerText = quizQuestions[id].a[0].text;
+    option2.innerText = quizQuestions[id].a[1].text;
+    option3.innerText = quizQuestions[id].a[2].text;
+    option4.innerText = quizQuestions[id].a[3].text;
+
+    option1.value = quizQuestions[id].a[0].isCorrect;
+    option2.value = quizQuestions[id].a[1].isCorrect;
+    option3.value = quizQuestions[id].a[2].isCorrect;
+    option4.value = quizQuestions[id].a[3].isCorrect;
+
+    var selected = "";
+
+    option1.addEventListener("click", () => {
+        option1.style.backgroundColor = "lightgoldenrodyellow";
+        option2.style.backgroundColor = "lightskyblue";
+        option3.style.backgroundColor = "lightskyblue";
+        option4.style.backgroundColor = "lightskyblue";
+        selected = option1.value;
+    })
+
+    option2.addEventListener("click", () => {
+        option1.style.backgroundColor = "lightskyblue";
+        option2.style.backgroundColor = "lightgoldenrodyellow";
+        option3.style.backgroundColor = "lightskyblue";
+        option4.style.backgroundColor = "lightskyblue";
+        selected = option2.value;
+    })
+
+    option3.addEventListener("click", () => {
+        option1.style.backgroundColor = "lightskyblue";
+        option2.style.backgroundColor = "lightskyblue";
+        option3.style.backgroundColor = "lightgoldenrodyellow";
+        option4.style.backgroundColor = "lightskyblue";
+        selected = option3.value;
+    })
+
+    option4.addEventListener("click", () => {
+        option1.style.backgroundColor = "lightskyblue";
+        option2.style.backgroundColor = "lightskyblue";
+        option3.style.backgroundColor = "lightskyblue";
+        option4.style.backgroundColor = "lightgoldenrodyellow";
+        selected = option4.value;
+    })
+}
