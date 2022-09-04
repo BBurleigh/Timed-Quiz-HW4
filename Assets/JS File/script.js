@@ -113,4 +113,41 @@ function iterate(id) {
         option4.style.backgroundColor = "lightgoldenrodyellow";
         selected = option4.value;
     })
+
+    const evaluate = document.getElementsByClassName("evaluate");
+
+    evaluate[0].addEventListener("click", () => {
+
+        if (selected == "true") {
+
+            result[0].innerHTML = "True";
+            result[0].style.color = "green";
+
+        }   else {
+            result[0].innerHTML = "False";
+            result[0].style.color = "red";
+        }
+    })
 }
+
+if (start) {
+
+    iterate("0");
+
+}
+
+const next = document.getElementsByClassName('next')[0];
+
+var id = 0;
+
+next.addEventListener("click", () => {
+
+    start = false;
+    if (id < 5) {
+
+        id++;
+        iterate(id);
+        console.log(id);
+    } 
+
+})
