@@ -56,6 +56,8 @@ const quizQuestions = [{
 
 var start = true;
 
+var playerScore = 0;
+
 function iterate(id) {
 
     var result = document.getElementsByClassName("result");
@@ -114,18 +116,41 @@ function iterate(id) {
         selected = option4.value;
     })
 
+    var timeEl = document.querySelector("#timer");
+
+    var secondsLeft = 120;
+
+    function setTime() {
+        
+        var timerInterval = setInterval(function() {
+          secondsLeft--;
+          timeEl.textContent = secondsLeft;
+      
+          if(secondsLeft === 0) {
+      
+            clearInterval(timerInterval);
+            
+          }
+      
+        }, 1000);
+      }
+
     const evaluate = document.getElementsByClassName("evaluate");
 
     evaluate[0].addEventListener("click", () => {
 
         if (selected == "true") {
 
-            result[0].innerHTML = "True";
+            result[0].innerHTML = "Correct!";
             result[0].style.color = "green";
+            playerScore++;
 
         }   else {
-            result[0].innerHTML = "False";
+
+            result[0].innerHTML = "Nope.";
             result[0].style.color = "red";
+            secondsLeft = secondsLeft - 5;
+
         }
     })
 }
@@ -133,6 +158,7 @@ function iterate(id) {
 if (start) {
 
     iterate("0");
+    setTime();
 
 }
 
