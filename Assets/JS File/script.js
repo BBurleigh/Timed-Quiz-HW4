@@ -56,8 +56,6 @@ const quizQuestions = [{
 
 var start = true;
 
-var playerScore = 0;
-
 function iterate(id) {
 
     var result = document.getElementsByClassName("result");
@@ -116,28 +114,30 @@ function iterate(id) {
         selected = option4.value;
     })
 
-    var timeEl = document.querySelector("#timer");
+    var remainingTime = 120;
 
-    var secondsLeft = 120;
+    function countdown() {
 
-    function setTime() {
-        
-        var timerInterval = setInterval(function() {
-          secondsLeft--;
-          timeEl.textContent = secondsLeft;
-      
-          if(secondsLeft === 0) {
-      
-            clearInterval(timerInterval);
-            
-          }
-      
-        }, 1000);
-      }
+       var quizClock = setInterval(function() {
+
+        remainingTime--;
+
+        if  (remainingTime === 0) {
+
+            clearInterval(quizClock);
+             
+        }
+       }, 1000);
+
+    } 
+
 
     const evaluate = document.getElementsByClassName("evaluate");
 
     evaluate[0].addEventListener("click", () => {
+
+        var currentScore = 0;
+        
 
         if (selected == "true") {
 
@@ -158,7 +158,6 @@ function iterate(id) {
 if (start) {
 
     iterate("0");
-    setTime();
 
 }
 
