@@ -151,7 +151,7 @@ if (start) {
 
 }
 
-    var remainingTime = 120;
+    var remainingTime = 5;
 
     var timer = document.getElementById("timer");
 
@@ -176,7 +176,24 @@ if (start) {
 
     function endQuiz() {
 
-        window.location.href = "scores.html";
+          var initials = prompt("Please type your initials to record your score!");
+
+          var scores = JSON.parse(localStorage.getItem("scores")) || []
+
+          var score = {
+
+             points: remainingTime,
+
+             initials: initials,
+
+          } 
+
+          scores.push(score);
+
+          localStorage.setItem("scores", JSON.stringify(scores));
+
+    //    window.location.href = "scores.html";
+
     }
 
 const next = document.getElementsByClassName('next')[0];
