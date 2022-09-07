@@ -54,6 +54,24 @@ const quizQuestions = [{
 }
 ]
 
+function beginQuiz() {
+
+    let text = "If you wish to take this quiz, press OK. If you do not want to take this quiz, press CANCEL.";
+
+    if (confirm(text) == true) {
+
+       alert("Your quiz will begin now. You have 60 seconds to correctly answer 6 questions. Missed questions will result in -5 seconds to the timer. You can log in your score at the end and see it in the high score page. Good luck!");
+
+    } else {
+
+       alert("Not a problem. Just exit out of this tab once this leaving this alert.");
+    
+    }
+
+}
+
+Window.onload = beginQuiz();
+
 var start = true;
 
 function iterate(id) {
@@ -118,11 +136,11 @@ function iterate(id) {
 
     evaluate[0].addEventListener("click", () => {
 
-        var totalPoints = 0;
+        //var totalPoints = 0;
 
-        var playerScore = document.getElementById("current-score");
+        //var playerScore = document.getElementById("current-score");
         
-    for(var i = 0; i < quizQuestions.length; i++) {
+   // for(var i = 0; i < quizQuestions.length; i++) {
 
         if (selected == "true") {
 
@@ -130,9 +148,9 @@ function iterate(id) {
 
             result[0].style.color = "green";
 
-            totalPoints++;
+            //totalPoints++;
 
-            playerScore.innerText =totalPoints;
+           // playerScore.innerText =totalPoints;
 
         }   else {
 
@@ -144,7 +162,9 @@ function iterate(id) {
 
         }
 
-    }
+        question.innerText = quizQuestions[id+1].q
+
+   // }
 
     })
 }
