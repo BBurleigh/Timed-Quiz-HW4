@@ -151,7 +151,7 @@ if (start) {
 
 }
 
-    var remainingTime = 5;
+    var remainingTime = 60;
 
     var timer = document.getElementById("timer");
 
@@ -190,7 +190,7 @@ if (start) {
 
           scores.push(score);
 
-          localStorage.setItem("scores", JSON.stringify(scores));
+          localStorage.setItem("score", JSON.stringify(score));
 
     //    window.location.href = "scores.html";
 
@@ -219,3 +219,11 @@ next.addEventListener("click", () => {
     }
 
 })
+
+var startOver = document.getElementById("start-over");
+
+startOver.addEventListener("click", function(e) {
+
+    location.reload();
+
+}, false);
