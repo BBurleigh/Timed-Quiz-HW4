@@ -118,8 +118,11 @@ function iterate(id) {
 
     evaluate[0].addEventListener("click", () => {
 
-        var playerScore = 0;
+        var totalPoints = 0;
+
+        var playerScore = document.getElementById("current-score");
         
+    for(var i = 0; i <quizQuestions.length; i++) {
 
         if (selected == "true") {
 
@@ -127,7 +130,9 @@ function iterate(id) {
 
             result[0].style.color = "green";
 
-            playerScore++;
+            totalPoints++;
+
+            playerScore.innerText =totalPoints;
 
         }   else {
 
@@ -138,6 +143,9 @@ function iterate(id) {
             remainingTime = remainingTime - 5;
 
         }
+    
+    }
+
     })
 }
 
