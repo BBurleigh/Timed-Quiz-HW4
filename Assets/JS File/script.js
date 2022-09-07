@@ -114,30 +114,28 @@ function iterate(id) {
         selected = option4.value;
     })
 
-
-
-    
-
-  
-
     const evaluate = document.getElementsByClassName("evaluate");
 
     evaluate[0].addEventListener("click", () => {
 
-        var currentScore = 0;
+        var playerScore = 0;
         
 
         if (selected == "true") {
 
             result[0].innerHTML = "Correct!";
+
             result[0].style.color = "green";
+
             playerScore++;
 
         }   else {
 
             result[0].innerHTML = "Nope.";
+            
             result[0].style.color = "red";
-            secondsLeft = secondsLeft - 5;
+
+            remainingTime = remainingTime - 5;
 
         }
     })
