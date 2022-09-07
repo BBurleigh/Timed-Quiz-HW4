@@ -114,23 +114,11 @@ function iterate(id) {
         selected = option4.value;
     })
 
-    var remainingTime = 120;
 
-    function countdown() {
 
-       var quizClock = setInterval(function() {
+    
 
-        remainingTime--;
-
-        if  (remainingTime === 0) {
-
-            clearInterval(quizClock);
-             
-        }
-       }, 1000);
-
-    } 
-
+  
 
     const evaluate = document.getElementsByClassName("evaluate");
 
@@ -159,7 +147,30 @@ if (start) {
 
     iterate("0");
 
+    countdown();
+
 }
+
+    var remainingTime = 120;
+
+    var timer = document.getElementById("timer");
+
+    function countdown() {
+
+       var quizClock = setInterval(function() {
+
+        remainingTime--;
+
+        if  (remainingTime === 0) {
+
+            clearInterval(quizClock);
+             
+        }
+       }, 1000);
+
+    } 
+
+timer.innerText = remainingTime;
 
 const next = document.getElementsByClassName('next')[0];
 
