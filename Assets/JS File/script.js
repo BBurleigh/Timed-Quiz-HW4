@@ -156,21 +156,28 @@ if (start) {
     var timer = document.getElementById("timer");
 
     function countdown() {
-
+       
        var quizClock = setInterval(function() {
 
         remainingTime--;
 
+        timer.innerText = remainingTime;
+
         if  (remainingTime === 0) {
 
             clearInterval(quizClock);
+            
+            endQuiz();
              
         }
        }, 1000);
 
     } 
 
-timer.innerText = remainingTime;
+    function endQuiz() {
+
+        window.location.href = "scores.html";
+    }
 
 const next = document.getElementsByClassName('next')[0];
 
@@ -183,8 +190,15 @@ next.addEventListener("click", () => {
     if (id < 5) {
 
         id++;
+
         iterate(id);
+
         console.log(id);
-    } 
+
+    } else {
+        
+        endQuiz();
+    
+    }
 
 })
