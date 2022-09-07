@@ -198,6 +198,8 @@ if (start) {
 
           localStorage.setItem("score", JSON.stringify(score));
 
+          localStorage.setItem("initials", JSON.stringify(initials));
+
     //    window.location.href = "scores.html";
 
     }
