@@ -122,7 +122,7 @@ function iterate(id) {
 
         var playerScore = document.getElementById("current-score");
         
-    for(var i = 0; i <quizQuestions.length; i++) {
+    for(var i = 0; i < quizQuestions.length; i++) {
 
         if (selected == "true") {
 
@@ -143,7 +143,7 @@ function iterate(id) {
             remainingTime = remainingTime - 5;
 
         }
-    
+
     }
 
     })

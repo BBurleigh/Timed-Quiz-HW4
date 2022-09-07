@@ -146,6 +146,28 @@ body {
 
 }
 
+.row:after {
+   
+    box-sizing: border-box; 
+    content: "";
+    display: table;
+    clear: both;
+    
+}
+
+.column {
+
+    box-sizing: border-box;
+    font-family: monospace;
+    font-size: 20px;
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+    background-color: gray;
+    
+}
+
 @media screen and (max-width: 800px) {
     
     .option {
