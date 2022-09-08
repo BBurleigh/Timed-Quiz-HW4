@@ -77,7 +77,7 @@ function beginQuiz() {
 
     } else {
 
-       alert("Not a problem. Just exit out of this tab once this leaving this alert.");
+       alert("Not a problem. This page will close after you hit 'OK'.");
 
        addEventListener("click", close());
 
