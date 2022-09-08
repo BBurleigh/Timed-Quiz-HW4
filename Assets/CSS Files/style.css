@@ -97,6 +97,7 @@ body {
     display: flex;
     justify-content: space-around;
     background-color: #c7dddf;
+    border-radius: 8px;
     border-style: inset;
     border-color: gray;
 
@@ -105,13 +106,16 @@ body {
 .evaluate {
 
     margin-top: 10px;
-    width: 40%;
+    width: 60%;
     height: 80%;
     padding: 10px;
     font-size: larger;
-    background-color: #50DBB4;
+    background-color: #1f36b69d;
     border-radius: 8px;
+    color: white;
+    font-family:monospace;
     text-align: center;
+    
 }
 
 .score-container {

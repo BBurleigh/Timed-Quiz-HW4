@@ -60,7 +60,7 @@ function beginQuiz() {
 
     if (confirm(text) == true) {
 
-       alert("Your quiz will begin now. You have 60 seconds to correctly answer 6 questions. Missed questions will result in -5 seconds to the timer. You can log in your score at the end and see it in the high score page. Good luck!");
+       alert("Your quiz will begin now. You have 90 seconds to correctly answer 6 questions. After selecting an answer, click 'evaluate' to check for correctness. Missed questions will result in -5 seconds to the timer. You can log in your score at the end and see it in the high score page. Good luck!");
 
     } else {
 
@@ -168,7 +168,7 @@ function iterate(id) {
 
             remainingTime = remainingTime - 5; 
 
-        } else if (id > 5) {
+        } else if (id = 5) {
 
             endQuiz();
 
@@ -248,7 +248,7 @@ if (start) {
 
           localStorage.setItem("initials", JSON.stringify(initials));
 
-    //    window.location.href = "scores.html";
+       window.location.href = "scores.html";
 
     }
 
