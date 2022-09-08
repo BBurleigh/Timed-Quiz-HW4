@@ -120,32 +120,32 @@ function iterate(id) {
   if (id == 0) {
   option1.addEventListener("click", () => {
     option1.style.backgroundColor = "lightgoldenrodyellow";
-    option2.style.backgroundColor = "lightskyblue";
-    option3.style.backgroundColor = "lightskyblue";
-    option4.style.backgroundColor = "lightskyblue";
+    // option2.style.backgroundColor = "lightskyblue";
+    // option3.style.backgroundColor = "lightskyblue";
+    // option4.style.backgroundColor = "lightskyblue";
     selected = option1.value;
   });
 
   option2.addEventListener("click", () => {
-    option1.style.backgroundColor = "lightskyblue";
+    // option1.style.backgroundColor = "lightskyblue";
     option2.style.backgroundColor = "lightgoldenrodyellow";
-    option3.style.backgroundColor = "lightskyblue";
-    option4.style.backgroundColor = "lightskyblue";
+    // option3.style.backgroundColor = "lightskyblue";
+    // option4.style.backgroundColor = "lightskyblue";
     selected = option2.value;
   });
 
   option3.addEventListener("click", () => {
-    option1.style.backgroundColor = "lightskyblue";
-    option2.style.backgroundColor = "lightskyblue";
+    // option1.style.backgroundColor = "lightskyblue";
+    // option2.style.backgroundColor = "lightskyblue";
     option3.style.backgroundColor = "lightgoldenrodyellow";
-    option4.style.backgroundColor = "lightskyblue";
+    // option4.style.backgroundColor = "lightskyblue";
     selected = option3.value;
   });
 
   option4.addEventListener("click", () => {
-    option1.style.backgroundColor = "lightskyblue";
-    option2.style.backgroundColor = "lightskyblue";
-    option3.style.backgroundColor = "lightskyblue";
+    // option1.style.backgroundColor = "lightskyblue";
+    // option2.style.backgroundColor = "lightskyblue";
+    // option3.style.backgroundColor = "lightskyblue";
     option4.style.backgroundColor = "lightgoldenrodyellow";
     selected = option4.value;
   });
