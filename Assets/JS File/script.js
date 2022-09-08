@@ -134,6 +134,8 @@ function iterate(id) {
 
     const evaluate = document.getElementsByClassName("evaluate");
 
+    var id = 0;
+
     evaluate[0].addEventListener("click", () => {
 
         //var totalPoints = 0;
@@ -142,30 +144,54 @@ function iterate(id) {
         
    // for(var i = 0; i < quizQuestions.length; i++) {
 
-        if (selected == "true") {
+        if (selected == "true" && id < 5) {
 
             result[0].innerHTML = "Correct!";
 
             result[0].style.color = "green";
 
+            id++;
+
+            iterate(id);
+            
+            start = false;
+
             //totalPoints++;
 
            // playerScore.innerText =totalPoints;
 
-        }   else {
+        }   else if (selected == "false" && id < 5) {
 
             result[0].innerHTML = "Nope.";
             
             result[0].style.color = "red";
 
-            remainingTime = remainingTime - 5;
+            remainingTime = remainingTime - 5; 
+
+        } else if (id > 5) {
+
+            endQuiz();
 
         }
 
-        question.innerText = quizQuestions[id+1].q
+        
+    
+    // if (id < 5) {
+
+    //     id++;
+
+    //     iterate(id);
+
+    //     console.log(id);
+
+    // } else {
+        
+    //     endQuiz();
+    
+    // }
 
    // }
-
+        
     })
 }
 
@@ -177,7 +203,7 @@ if (start) {
 
 }
 
-    var remainingTime = 60;
+    var remainingTime = 90;
 
     var timer = document.getElementById("timer");
 
@@ -216,6 +242,8 @@ if (start) {
 
           scores.push(score);
 
+          initials.push(initials);
+
           localStorage.setItem("score", JSON.stringify(score));
 
           localStorage.setItem("initials", JSON.stringify(initials));
@@ -224,29 +252,29 @@ if (start) {
 
     }
 
-const next = document.getElementsByClassName('next')[0];
+// const next = document.getElementsByClassName('next')[0];
 
-var id = 0;
+// var id = 0;
 
-next.addEventListener("click", () => {
+// next.addEventListener("click", () => {
 
-    start = false;
+//     start = false;
     
-    if (id < 5) {
+//     if (id < 5) {
 
-        id++;
+//         id++;
 
-        iterate(id);
+//         iterate(id);
 
-        console.log(id);
+//         console.log(id);
 
-    } else {
+//     } else {
         
-        endQuiz();
+//         endQuiz();
     
-    }
+//     }
 
-})
+// })
 
 var startOver = document.getElementById("start-over");
 
