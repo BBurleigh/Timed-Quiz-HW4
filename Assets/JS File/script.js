@@ -26,10 +26,7 @@ const quizQuestions = [
       { text: "document.body.appendParent()", isCorrect: false },
       { text: "event.button.setAttribute()", isCorrect: false },
       { text: "event.stopParentalInvolvement()", isCorrect: false },
-      {
-        text: "button.addEventListener('click', function/event)",
-        isCorrect: true,
-      },
+      { text: "button.addEventListener('click', function/event)", isCorrect: true },
     ],
   },
   {
@@ -82,6 +79,8 @@ function beginQuiz() {
 
        alert("Not a problem. Just exit out of this tab once this leaving this alert.");
 
+       addEventListener("click", close());
+
     }
 
 }
@@ -93,7 +92,9 @@ var start = true;
 var id = 0;
 
 function iterate(id) {
+
   var result = document.getElementsByClassName("result");
+
   result[0].innerText = "";
 
   const question = document.getElementById("question");
@@ -101,68 +102,72 @@ function iterate(id) {
   question.innerText = quizQuestions[id].q;
 
   const option1 = document.getElementById("option1");
+
   const option2 = document.getElementById("option2");
+
   const option3 = document.getElementById("option3");
+
   const option4 = document.getElementById("option4");
 
   option1.innerText = quizQuestions[id].a[0].text;
+
   option2.innerText = quizQuestions[id].a[1].text;
+
   option3.innerText = quizQuestions[id].a[2].text;
+
   option4.innerText = quizQuestions[id].a[3].text;
 
   option1.value = quizQuestions[id].a[0].isCorrect;
+
   option2.value = quizQuestions[id].a[1].isCorrect;
+
   option3.value = quizQuestions[id].a[2].isCorrect;
+
   option4.value = quizQuestions[id].a[3].isCorrect;
 
   var selected = "";
    
   if (id == 0) {
+
   option1.addEventListener("click", () => {
+
     option1.style.backgroundColor = "lightgoldenrodyellow";
-    // option2.style.backgroundColor = "lightskyblue";
-    // option3.style.backgroundColor = "lightskyblue";
-    // option4.style.backgroundColor = "lightskyblue";
+    
     selected = option1.value;
   });
 
   option2.addEventListener("click", () => {
-    // option1.style.backgroundColor = "lightskyblue";
+    
     option2.style.backgroundColor = "lightgoldenrodyellow";
-    // option3.style.backgroundColor = "lightskyblue";
-    // option4.style.backgroundColor = "lightskyblue";
+    
     selected = option2.value;
+
   });
 
   option3.addEventListener("click", () => {
-    // option1.style.backgroundColor = "lightskyblue";
-    // option2.style.backgroundColor = "lightskyblue";
+    
     option3.style.backgroundColor = "lightgoldenrodyellow";
-    // option4.style.backgroundColor = "lightskyblue";
+    
     selected = option3.value;
+
   });
 
   option4.addEventListener("click", () => {
-    // option1.style.backgroundColor = "lightskyblue";
-    // option2.style.backgroundColor = "lightskyblue";
-    // option3.style.backgroundColor = "lightskyblue";
+
     option4.style.backgroundColor = "lightgoldenrodyellow";
+
     selected = option4.value;
+
   });
+
 }
+
   const evaluate = document.querySelector(".evaluate");
 
-  
-
   evaluate.addEventListener("click", () => {
-    //var totalPoints = 0;
-
-    //var playerScore = document.getElementById("current-score");
-
-    // for(var i = 0; i < quizQuestions.length; i++) {
 
     if (selected == "true" && id <= 5) {
-      console.log("true", id);
+    
       result[0].innerHTML = "Correct!";
 
       result[0].style.color = "green";
@@ -173,45 +178,28 @@ function iterate(id) {
 
       start = false;
 
-      //totalPoints++;
-
-      // playerScore.innerText =totalPoints;
-
     } else if (selected == "false" && id <= 5) {
-      console.log("false", id);
+
       result[0].innerHTML = "Nope.";
 
       result[0].style.color = "red";
 
       remainingTime = remainingTime - 5;
 
-    }
+    } 
     
     if ((id > 5)) {
-      console.log("end", id);
+      
       endQuiz();
 
     }
 
-    // if (id < 5) {
-
-    //     id++;
-
-    //     iterate(id);
-
-    //     console.log(id);
-
-    // } else {
-
-    //     endQuiz();
-
-    // }
-
-    // }
   });
+
 }
 
 if (start) {
+
   iterate("0");
 
   countdown();
@@ -236,14 +224,17 @@ function countdown() {
 }
 
 function endQuiz() {
+
   var initials = prompt("Please type your initials to record your score!");
 
   var scores = JSON.parse(localStorage.getItem("scores")) || [];
 
   var score = {
+
     points: remainingTime,
 
     initials: initials,
+
   };
 
   scores.push(score);
@@ -257,36 +248,14 @@ function endQuiz() {
   window.location.href = "scores.html";
 }
 
-// const next = document.getElementsByClassName('next')[0];
-
-// var id = 0;
-
-// next.addEventListener("click", () => {
-
-//     start = false;
-
-//     if (id < 5) {
-
-//         id++;
-
-//         iterate(id);
-
-//         console.log(id);
-
-//     } else {
-
-//         endQuiz();
-
-//     }
-
-// })
-
 var startOver = document.getElementById("start-over");
 
-startOver.addEventListener(
-  "click",
-  function (e) {
+startOver.addEventListener( "click", function (e) {
+
     location.reload();
+
   },
+
   false
+
 );
