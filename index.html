@@ -58,6 +58,24 @@
 
     </div>
 
+    <script>function beginQuiz() {
+
+        let text = "If you wish to take this quiz, press OK. If you do not want to take this quiz, press CANCEL.";
+    
+        if (confirm(text) == true) {
+    
+           alert("Your quiz will begin now. You have 90 seconds to correctly answer 6 questions. After selecting an answer, click 'evaluate' to check for correctness. Missed questions will result in -5 seconds to the timer. You can log in your score at the end and see it in the high score page. Good luck!");
+    
+        } else {
+    
+           alert("Not a problem. This page will close after you hit 'OK'.");
+    
+           addEventListener("click", close());
+    
+        }
+    
+    } Window.onload = beginQuiz(); </script>
+
     <script src="./Assets/JS File/script.js" ></script>
 
 </body>

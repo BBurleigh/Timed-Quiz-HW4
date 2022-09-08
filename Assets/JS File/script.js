@@ -67,26 +67,6 @@ const quizQuestions = [
   },
 ];
 
-function beginQuiz() {
-
-    let text = "If you wish to take this quiz, press OK. If you do not want to take this quiz, press CANCEL.";
-
-    if (confirm(text) == true) {
-
-       alert("Your quiz will begin now. You have 90 seconds to correctly answer 6 questions. After selecting an answer, click 'evaluate' to check for correctness. Missed questions will result in -5 seconds to the timer. You can log in your score at the end and see it in the high score page. Good luck!");
-
-    } else {
-
-       alert("Not a problem. This page will close after you hit 'OK'.");
-
-       addEventListener("click", close());
-
-    }
-
-}
-
-Window.onload = beginQuiz();
-
 var start = true;
 
 var id = 0;
@@ -225,25 +205,17 @@ function countdown() {
 
 function endQuiz() {
 
-  var initials = prompt("Please type your initials to record your score!");
+  var initials = alert("You have completed the quiz! Enter your initials on the follow high scores page!");
 
-  var scores = JSON.parse(localStorage.getItem("scores")) || [];
+  var finalTime = remainingTime;
 
-  var score = {
+//   scores.push(score);
 
-    points: remainingTime,
+//   initials.push(initials);
 
-    initials: initials,
+//   localStorage.setItem("score", JSON.stringify(score));
 
-  };
-
-  scores.push(score);
-
-  initials.push(initials);
-
-  localStorage.setItem("score", JSON.stringify(score));
-
-  localStorage.setItem("initials", JSON.stringify(initials));
+//   localStorage.setItem("initials", JSON.stringify(initials));
 
   window.location.href = "scores.html";
 }
