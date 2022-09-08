@@ -102,23 +102,16 @@ body {
 
 }
 
-.evaluate,
-.next {
+.evaluate {
 
     margin-top: 10px;
     width: 40%;
     height: 80%;
     padding: 10px;
     font-size: larger;
-
-}
-
-.evaluate {
-
     background-color: #50DBB4;
     border-radius: 8px;
     text-align: center;
-
 }
 
 .score-container {
