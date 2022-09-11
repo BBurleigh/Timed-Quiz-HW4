@@ -114,6 +114,7 @@ function iterate(id) {
     option1.style.backgroundColor = "lightgoldenrodyellow";
     
     selected = option1.value;
+
   });
 
   option2.addEventListener("click", () => {
@@ -167,6 +168,14 @@ function iterate(id) {
       remainingTime = remainingTime - 5;
 
     } 
+
+    option1.style.backgroundColor = "lightskyblue";
+
+    option2.style.backgroundColor = "lightskyblue";
+
+    option3.style.backgroundColor = "lightskyblue";
+
+    option4.style.backgroundColor = "lightskyblue";
     
     if ((id > 5)) {
       
@@ -190,12 +199,15 @@ var remainingTime = 90;
 var timer = document.getElementById("timer");
 
 function countdown() {
+
   var quizClock = setInterval(function () {
+
     remainingTime--;
 
     timer.innerText = remainingTime;
 
     if (remainingTime === 0) {
+
       clearInterval(quizClock);
 
       endQuiz();
@@ -208,6 +220,8 @@ function endQuiz() {
   var initials = alert("You have completed the quiz! Enter your initials on the follow high scores page!");
 
   var finalTime = remainingTime;
+
+  window.localStorage.setItem('score', JSON.stringify(finalTime));
 
 //   scores.push(score);
 
@@ -231,3 +245,5 @@ startOver.addEventListener( "click", function (e) {
   false
 
 );
+
+
