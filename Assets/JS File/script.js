@@ -217,11 +217,13 @@ function countdown() {
 
 function endQuiz() {
 
-  var initials = alert("You have completed the quiz! Enter your initials on the follow high scores page!");
-
   var finalTime = remainingTime;
 
   window.localStorage.setItem('score', JSON.stringify(finalTime));
+
+  //score.appendChild("finalTime");
+
+  alert("You have completed the quiz! Enter your initials on the follow high scores page!");
 
 //   scores.push(score);
 
@@ -232,6 +234,7 @@ function endQuiz() {
 //   localStorage.setItem("initials", JSON.stringify(initials));
 
   window.location.href = "scores.html";
+
 }
 
 var startOver = document.getElementById("start-over");
@@ -246,4 +249,12 @@ startOver.addEventListener( "click", function (e) {
 
 );
 
+function printInitials(text) {
 
+  var initials = document.createTextNode(text);
+
+  var col1 = document.getElementById("name");
+
+  col1.appendChild(initials);
+
+}
