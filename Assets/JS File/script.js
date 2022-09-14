@@ -249,12 +249,24 @@ startOver.addEventListener( "click", function (e) {
 
 );
 
-function printInitials(text) {
+var initialsInput = document.querySelector("#name");
 
-  var initials = document.createTextNode(text);
+function printInitials(event) {
+
+  event.preventDefault();
+
+  var player = { 
+    
+    initials: initialsInput.value.trim()
+  
+  }
+
+  localStorage.setItem("player", JSON.stringify(player)); 
+
+  // var initials = document.createTextNode(text);
 
   var col1 = document.getElementById("name");
 
-  col1.appendChild(initials);
+  col1.appendChild(player);
 
 }
