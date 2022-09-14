@@ -220,10 +220,14 @@ function endQuiz() {
   var finalTime = remainingTime;
 
   window.localStorage.setItem('score', JSON.stringify(finalTime));
-
-  //score.appendChild("finalTime");
+  
+  var col2 = document.getElementById("score");
 
   alert("You have completed the quiz! Enter your initials on the follow high scores page!");
+  
+  window.location.href = "scores.html";
+
+  col2.append(score.finalTime);
 
 //   scores.push(score);
 
@@ -232,8 +236,6 @@ function endQuiz() {
 //   localStorage.setItem("score", JSON.stringify(score));
 
 //   localStorage.setItem("initials", JSON.stringify(initials));
-
-  window.location.href = "scores.html";
 
 }
 
